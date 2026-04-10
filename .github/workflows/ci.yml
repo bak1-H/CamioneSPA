@@ -1,0 +1,92 @@
+name: Implementación de CI para microservicios
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [main]
+
+jobs:
+  cliente:
+    name: Cliente
+    runs-on: ubuntu-latest
+    env:
+      MONGODB_URI_CLIENTE: ${{ secrets.MONGODB_URI_CLIENTE }}
+    defaults:
+      run:
+        working-directory: Cliente/Cliente
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build Cliente
+        run: mvn clean install -DskipTests
+
+  camion:
+    name: Camion
+    runs-on: ubuntu-latest
+    env:
+      MONGODB_URI_CAMION: ${{ secrets.MONGODB_URI_CAMION }}
+    defaults:
+      run:
+        working-directory: camion/camion
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build Camion
+        run: mvn clean install -DskipTests
+
+  usuario:
+    name: Usuario
+    runs-on: ubuntu-latest
+    env:
+      MONGODB_URI_USUARIO: ${{ secrets.MONGODB_URI_USUARIO }}
+    defaults:
+      run:
+        working-directory: Usuario/Usuario
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build Usuario
+        run: mvn clean install -DskipTests
+
+  arriendo:
+    name: Arriendo
+    runs-on: ubuntu-latest
+    env:
+      MONGODB_URI_ARRIENDO: ${{ secrets.MONGODB_URI_ARRIENDO }}
+    defaults:
+      run:
+        working-directory: Arriendo/Arriendo
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build Arriendo
+        run: mvn clean install -DskipTests
