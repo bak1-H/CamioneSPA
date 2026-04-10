@@ -1,29 +1,104 @@
-name: CI Pipeline
+name: CI Microservicios
 
 on:
   push:
-    branches:
-      - develop
+    branches: [develop]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  build:
+  cliente:
+    name: Cliente
     runs-on: ubuntu-latest
-
+    env:
+      MONGODB_URI_CLIENTE: ${{ secrets.MONGODB_URI_CLIENTE }}
+    defaults:
+      run:
+        working-directory: Cliente/Cliente
     steps:
       - uses: actions/checkout@v4
 
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
-          distribution: 'temurin'
+          java-version: "21"
+          distribution: "temurin"
           cache: maven
 
-      - name: Build with Maven
+      - name: Build Cliente
         run: mvn clean install -DskipTests
 
-      - name: Run tests
+      - name: Test Cliente
+        run: mvn test
+
+  camion:
+    name: Camion
+    runs-on: ubuntu-latest
+    env:
+      MONGODB_URI_CAMION: ${{ secrets.MONGODB_URI_CAMION }}
+    defaults:
+      run:
+        working-directory: camion/camion
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build Camion
+        run: mvn clean install -DskipTests
+
+      - name: Test Camion
+        run: mvn test
+
+  usuario:
+    name: Usuario
+    runs-on: ubuntu-latest
+    env:
+      MONGODB_URI_USUARIO: ${{ secrets.MONGODB_URI_USUARIO }}
+    defaults:
+      run:
+        working-directory: Usuario/Usuario
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build Usuario
+        run: mvn clean install -DskipTests
+
+      - name: Test Usuario
+        run: mvn test
+
+  arriendo:
+    name: Arriendo
+    runs-on: ubuntu-latest
+    env:
+      MONGODB_URI_ARRIENDO: ${{ secrets.MONGODB_URI_ARRIENDO }}
+    defaults:
+      run:
+        working-directory: Arriendo/Arriendo
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+          cache: maven
+
+      - name: Build Arriendo
+        run: mvn clean install -DskipTests
+
+      - name: Test Arriendo
         run: mvn test
