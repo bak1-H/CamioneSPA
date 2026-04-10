@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ArriendoApplication<Arriendo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Camionesspa.Arriendo.ArriendoApplication",
+            "projectName": "Arriendo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-CamionApplication<camion>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Camionesspa.camion.CamionApplication",
+            "projectName": "camion",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ClienteApplication<Cliente>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Camionesspa.Cliente.ClienteApplication",
+            "projectName": "Cliente",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UsuarioApplication<Usuario>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Camionesspa.Usuario.UsuarioApplication",
+            "projectName": "Usuario",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
