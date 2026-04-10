@@ -51,14 +51,13 @@ Este trabajo forma parte del encargo de la asignatura Ingeniería DevOps.
 
 
 🔐 Configuración
-Las credenciales sensibles no se almacenan en el repositorio, sino en llaves secretas del mismo GitHub.
+Las credenciales sensibles no se almacenan en el repositorio, sino en llaves secretas en el mismo GitHub.
 
 Ejemplo:
 MONGODB_URI_CLIENTE= mongodb+srv://usuario:password@cluster.mongodb.net/cliente
 MONGODB_URI_CAMION= mongodb+srv://usuario:password@cluster.mongodb.net/camion
 MONGODB_URI_USUARIO= mongodb+srv://usuario:password@cluster.mongodb.net/usuario
 MONGODB_URI_ARRIENDO= mongodb+srv://usuario:password@cluster.mongodb.net/arriendo
-
 
 
 🌿 Estrategia de Ramificación
@@ -85,7 +84,6 @@ hotfix/<nombre>
 
 📌 Naming de Ramas
 Convención utilizada:
-
 feature/<descripcion-corta>
 hotfix/<descripcion-corta>
 
@@ -99,17 +97,13 @@ hotfix/variables_entorno_mongodb
 💬 Convención de Commits
 Se utiliza una convención basada en buenas prácticas:
 
+Ejemplos
 feat: nueva funcionalidad
 fix: corrección de errores
 docs: cambios en documentación
 ci: cambios en integración continua
 chore: tareas menores
 refactor: mejora interna
-Ejemplos
-feat: add user registration endpoint
-fix: correct database connection
-docs: update README
-ci: add GitHub Actions workflow
 
 🔀 Flujo de Trabajo (Merge)
 
