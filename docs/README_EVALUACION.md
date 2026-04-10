@@ -139,6 +139,7 @@ Antes de aprobar un Pull Request se valida:
 ✔ Mensajes de commit claros
 ✔ Código funcional
 ✔ Que el pipeline CI pase correctamente
+✔ Cort Fuego con los Test
 
 
 
