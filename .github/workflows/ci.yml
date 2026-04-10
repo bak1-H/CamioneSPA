@@ -1,4 +1,4 @@
-name: CI Microservicios
+name: Implementación de CI para microservicios
 
 on:
   push:
