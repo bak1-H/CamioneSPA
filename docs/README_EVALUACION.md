@@ -133,8 +133,6 @@ Antes de aprobar un Pull Request se valida:
 ✔ Mensajes de commit claros
 ✔ Código funcional
 ✔ Que el pipeline CI pase correctamente
-✔ Cort Fuego con los Test
-
 
 
 ⚙️ Integración Continua (CI/CD)
@@ -142,8 +140,7 @@ Se implementa automatización con GitHub Actions para validar compilación y pru
 
 Eventos configurados:
 
-cuando se hace un push a la rama "Dev",
-se cree automaticamente un PR hacia main.
+“Se implementó un pipeline de integración continua con GitHub Actions que se ejecuta automáticamente en cada push a la rama develop y en cada pull request hacia main. Este pipeline compila cada microservicio de forma independiente utilizando Maven, validando que el código sea integrable correctamente antes de su despliegue.”
 
 
 Ubicación del pipeline:
