@@ -54,10 +54,10 @@ Este trabajo forma parte del encargo de la asignatura Ingeniería DevOps.
 Las credenciales sensibles no se almacenan en el repositorio, sino en llaves secretas en el mismo GitHub.
 
 Ejemplo:
-MONGODB_URI_CLIENTE= mongodb+srv://usuario:password@cluster.mongodb.net/cliente
-MONGODB_URI_CAMION= mongodb+srv://usuario:password@cluster.mongodb.net/camion
-MONGODB_URI_USUARIO= mongodb+srv://usuario:password@cluster.mongodb.net/usuario
-MONGODB_URI_ARRIENDO= mongodb+srv://usuario:password@cluster.mongodb.net/arriendo
+    MONGODB_URI_CLIENTE=mongodb+srv://usuario:password@cluster.mongodb.net/cliente
+    MONGODB_URI_CAMION=mongodb+srv://usuario:password@cluster.mongodb.net/camion
+    MONGODB_URI_USUARIO=mongodb+srv://usuario:password@cluster.mongodb.net/usuario
+    MONGODB_URI_ARRIENDO=mongodb+srv://usuario:password@cluster.mongodb.net/arriendo
 
 
 🌿 Estrategia de Ramificación
@@ -142,8 +142,8 @@ Se implementa automatización con GitHub Actions para validar compilación y pru
 
 Eventos configurados:
 
-push a develop
-pull_request a main
+cuando se hace un push a la rama "Dev",
+se cree automaticamente un PR hacia main.
 
 
 Ubicación del pipeline:
@@ -153,7 +153,6 @@ Ubicación del pipeline:
 1. Checkout del código con actions/checkout@v4
 2. Configuración de Java 21 (Temurin) con caché de Maven
 3. Build con Maven: mvn clean install -DskipTests
-4. Ejecución de tests: mvn test
 
 Validaciones que entrega el pipeline:
 
